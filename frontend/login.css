@@ -1,0 +1,108 @@
+/* General Reset */
+ body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #444, #333);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* Login Container */
+.login-container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+.login-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.login-container p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+} 
+
+/* Button */
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Register Link */
+.register-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: #0056b3;
+}
+
+
+
+
+
+
+
+

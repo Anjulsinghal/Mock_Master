@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Page - MockMaster</title>
+    <link rel="stylesheet" href="testpage.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/image.jpg" alt="MockMaster Logo" />
+        <h1>Front End-Test</h1>
+      </div>
+      <div class="timer">
+        <h3>Time Remaining: <span id="timer">30:00</span></h3>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Test Rules</h3>
+      <ul>
+        <li>Read all instructions carefully.</li>
+        <li>Each question has 4 options, and only one is correct.</li>
+        <li>Do not refresh or navigate away during the test.</li>
+        <li>Complete the test within 30 minutes.</li>
+        <li>Submit the test before the timer ends.</li>
+        <li>Each correct answer carries 1 point. No negative marking.</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <section id="question-container">
+        <!-- Questions will be dynamically loaded here -->
+      </section>
+
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <button id="prev-btn" onclick="prevQuestion()" disabled>
+          Previous
+        </button>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+        <button id="submit-btn" onclick="submitTest()" style="display: none">
+          Submit Test
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 MockMaster. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      let time = 8 * 60; // 30 minutes
+      let currentQuestionIndex = 0;
+      let questions = [];
+      const userId = localStorage.getItem("userId"); // Replace with the actual user ID
+      const topic = localStorage.getItem("test-name"); // Replace with the
+      const answers = [];
+
+      const timerDisplay = document.getElementById("timer");
+      const questionContainer = document.getElementById("question-container");
+      const prevBtn = document.getElementById("prev-btn");
+      const nextBtn = document.getElementById("next-btn");
+      const submitBtn = document.getElementById("submit-btn");
+
+
+      window.addEventListener("beforeunload", (event) => {
+        // Customize the message for some browsers
+        const confirmationMessage = "Are you sure you want to leave test?";
+        
+        // Display the confirmation dialog
+        event.preventDefault(); // Necessary for some browsers
+        event.returnValue = confirmationMessage; // Standard way to trigger a confirmation dialog
+        return confirmationMessage; // For some older browsers
+      });
+
+      // Timer Functionality
+      function startTimer() {
+        const countdown = setInterval(() => {
+          const minutes = Math.floor(time / 60);
+          const seconds = time % 60;
+          timerDisplay.textContent = `${minutes
+            .toString()
+            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+          time--;
+          if (time < 0) {
+            clearInterval(countdown);
+            alert("Time's up! Submitting your test.");
+            submitTest();
+          }
+        }, 1000);
+      }
+
+      // Fetch Questions from Backend
+      async function loadQuestions() {
+        try {
+          const response = await fetch(
+            `http://localhost:5000/api/questions/${topic}`
+          );
+          const allQuestions = await response.json();
+
+          if (allQuestions.length > 10) {
+            // Shuffle the questions and select the first 10 unique ones
+            questions = shuffleArray(allQuestions).slice(0, 10);
+            loadQuestion(0);
+          } else if (allQuestions.length > 0) {
+            // If less than 10 questions exist, load all available questions
+            questions = allQuestions;
+            loadQuestion(0);
+          } else {
+            alert("No questions available for this topic.");
+          }
+        } catch (error) {
+          alert("Error loading questions.");
+        }
+      }
+
+      // Fisher-Yates Shuffle Algorithm to Randomize Questions
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1)); // Generate random index
+          [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+        }
+        return array;
+      }
+
+      // Fetch Questions from Backend
+      function escapeHTML(html) {
+        const div = document.createElement("div");
+        div.textContent = html;
+        return div.innerHTML;
+      }
+      
+      function loadQuestion(index) {
+        currentQuestionIndex = index;
+        const question = questions[index];
+        const options = question.options
+          .map(
+            (opt, idx) => `
+            <label>
+                <input type="radio" name="q${index}" value="${String.fromCharCode(
+              97 + idx
+            )}" ${
+              answers[index] === String.fromCharCode(97 + idx) ? "checked" : ""
+            }>
+                <span>${escapeHTML(opt)}</span>
+            </label><br>
+            `
+          )
+          .join("");
+        questionContainer.innerHTML = `
+            <h2 class="question-title">Question ${index + 1}</h2>
+            <div class="question-content">
+                <p><strong>${question.question}</strong></p>
+                <div>${options}</div>
+            </div>
+        `;
+        prevBtn.disabled = index === 0;
+        nextBtn.style.display =
+          index < questions.length - 1 ? "inline-block" : "none";
+        submitBtn.style.display =
+          index === questions.length - 1 ? "inline-block" : "none";
+      }
+      
+
+      // Navigation Functions
+      function nextQuestion() {
+        saveAnswer();
+        if (currentQuestionIndex < questions.length - 1) {
+          loadQuestion(currentQuestionIndex + 1);
+        }
+      }
+
+      function prevQuestion() {
+        saveAnswer();
+        if (currentQuestionIndex > 0) {
+          loadQuestion(currentQuestionIndex - 1);
+        }
+      }
+
+      function saveAnswer() {
+        const selectedOption = document.querySelector(
+          `input[name="q${currentQuestionIndex}"]:checked`
+        );
+        answers[currentQuestionIndex] = selectedOption
+          ? selectedOption.value
+          : null;
+      }
+
+      // Submit Test and Calculate Score
+      async function submitTest() {
+        saveAnswer();
+        if (answers.includes(null)) {
+          alert("Please answer all questions before submitting.");
+          return;
+        }
+
+        try {
+          const response = await fetch(
+            `http://localhost:5000/api/questions/submit`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ userId, topic, answers }),
+            }
+          );
+          const result = await response.json();
+          alert(
+            `Test submitted successfully! Your score: ${result.score * 10}%`
+          );
+          window.location.href = "mocktest.html";
+        } catch (error) {
+          alert("Error submitting the test.");
+        }
+      }
+
+      // Initialize Page
+      startTimer();
+      loadQuestions();
+    </script>
+  </body>
+</html>

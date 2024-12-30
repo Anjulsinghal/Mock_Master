@@ -1,0 +1,168 @@
+/* General Reset */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* Sign-Up Container */
+.signup-container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.signup-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #6a11cb;
+}
+
+.signup-container p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    border-color: #6a11cb;
+}
+
+/* Button */
+.btn {
+    background: #6a11cb;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background: #4b0082;
+}
+
+/* Social Login Buttons */
+.social-login {
+    margin: 20px 0;
+}
+
+.social-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.google {
+    background: #db4437;
+    color: white;
+}
+
+.google:hover {
+    background: #b33a2c;
+}
+
+.linkedin {
+    background: #0077b5;
+    color: white;
+}
+
+.linkedin:hover {
+    background: #005983;
+}
+
+/* Sign-In Link */
+.signin-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.signin-link a {
+    color: #6a11cb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signin-link a:hover {
+    color: #4b0082;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 480px) {
+    .signup-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .signup-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .signup-container p {
+        font-size: 0.8rem;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .social-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

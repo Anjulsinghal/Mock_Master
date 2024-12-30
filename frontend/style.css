@@ -1,0 +1,232 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo and login button */
+    z-index: 1000;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+/* Login Button Styling */
+.login-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #e55d50;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #333;
+    color: white;
+    width: 250px;
+    position: fixed;
+    top: 60px; /* Starts below the header */
+    left: 0;
+    bottom: 0;
+    padding-top: 20px;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #0073e6;
+    border-radius: 10px;
+}
+
+/* Main Content */
+main {
+    margin-left: 250px; /* Leaves space for the fixed sidebar */
+    margin-top: 70px; /* Leaves space for the fixed header */
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.feature-section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
+}
+
+.feature-section h2 {
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+.feature-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 15px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    header .login-btn {
+        margin-top: 10px;
+    }
+
+    /* Sidebar adjustments */
+    .sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar ul li a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* Main content adjustments */
+    main {
+        margin-left: 0;
+        margin-top: 120px; /* Adjusted to leave space for the fixed header */
+    }
+
+    /* Make the 'Learn More' links larger and more clickable */
+    .learn-more {
+        font-size: 18px;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 10px;
+    }
+
+    /* Sidebar toggle button on small screens (mobile) */
+    .sidebar-toggle {
+        display: block;
+        background-color: #0073e6;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+/* Learn More link styling */
+.learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0073e6; /* Blue color for links */
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.learn-more:hover {
+    color: #005bb5; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="mocktest.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="images/image.jpg" alt="MockMaster Logo">
+            <h2>MockMaster</h2>
+        </div>
+        <ul>
+          <li><a href="mocktest.html">Mock Test</a></li>
+          <li><a href="dashboard.html">User Profile</a></li>
+          <li><a href="videoconferencing.html">Video Conferencing</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li><button id="logout-btn" onclick="logout()">Logout</button></li>
+        </ul>
+    </aside>
+    <header class="navbar">
+        <h1>User Dashboard</h1>
+    </header>
+  <div class="dashboard-container">
+    <!-- User Profile Section -->
+    <section class="profile-section">
+      <img id="profile-picture" class="profile-picture" src="default-profile.png" alt="Profile Picture">
+      <h2 id="user-name">User Name</h2>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="summary-section">
+      <div class="circle">
+        <h3>Total Tests</h3>
+        <p id="total-tests">0</p>
+      </div>
+      <div class="circle">
+        <h3>Average Score</h3>
+        <p id="average-score">0%</p>
+      </div>
+    </section>
+
+    <!-- Test Scores Section -->
+    <section class="scores-section">
+      <h3>Test Scores</h3>
+      <ul id="scores-list">
+        <!-- Test scores will be dynamically loaded here -->
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const userId = localStorage.getItem("userId"); // Replace with actual user ID
+        const apiUrl = `http://localhost:5000/api/dashboard/user/${userId}`; // Adjust to your backend URL
+      
+        // DOM Elements
+        const profilePicture = document.getElementById('profile-picture');
+        const userName = document.getElementById('user-name');
+        const totalTests = document.getElementById('total-tests');
+        const averageScore = document.getElementById('average-score');
+        const scoresList = document.getElementById('scores-list');
+      
+        try {
+          // Fetch user data from the backend
+          const response = await fetch(apiUrl);
+          const user = await response.json();
+      
+          // Populate user profile
+          profilePicture.src = user.profilePicture || 'default-profile.png';
+          userName.textContent = user.name;
+      
+          // Calculate test stats
+          const total = user.scores.length;
+          const average = total > 0
+            ? (user.scores.reduce((sum, test) => sum + test.score, 0) / total).toFixed(2)
+            : 0;
+      
+          totalTests.textContent = total;
+          averageScore.textContent = `${average*10}%`;
+      
+          // Populate test scores
+          user.scores.forEach(({ topic, score }) => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+              <span>${topic}</span>
+              <span>${score*10}%</span>
+            `;
+            scoresList.appendChild(listItem);
+          });
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+          alert('Unable to load user data.');
+        }
+      });
+
+    
+      
+  </script>
+</body>
+</html>

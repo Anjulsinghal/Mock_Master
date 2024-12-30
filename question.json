@@ -1,0 +1,538 @@
+[
+  {
+    "topic": "frontend-test",
+    "questions": [
+      {
+        "question": "What does HTML stand for?",
+        "options": [
+          "HyperText Markup Language",
+          "Hyperlinks and Text Markup Language",
+          "Home Tool Markup Language",
+          "HyperText Machine Language"
+        ],
+        "correctAnswer": "HyperText Markup Language"
+      },
+      {
+        "question": "Which CSS property controls the text color?",
+        "options": ["color", "text-color", "font-color", "background-color"],
+        "correctAnswer": "color"
+      },
+      {
+        "question": "What is the default position value in CSS?",
+        "options": ["static", "relative", "absolute", "fixed"],
+        "correctAnswer": "static"
+      },
+      {
+        "question": "Which JavaScript method is used to select an element by ID?",
+        "options": [
+          "getElementById()",
+          "querySelector()",
+          "getElementByClass()",
+          "selectById()"
+        ],
+        "correctAnswer": "getElementById()"
+      },
+      {
+        "question": "What is the correct syntax for linking an external CSS file?",
+        "options": [
+          "<link href='style.css' rel='stylesheet'>",
+          "<stylesheet>style.css</stylesheet>",
+          "<css src='style.css'>",
+          "<style src='style.css'>"
+        ],
+        "correctAnswer": "<link href='style.css' rel='stylesheet'>"
+      },
+      {
+        "question": "Which HTML tag is used to define an unordered list?",
+        "options": ["<ul>", "<ol>", "<li>", "<list>"],
+        "correctAnswer": "<ul>"
+      },
+      {
+        "question": "Which property is used to change the background color in CSS?",
+        "options": ["background-color", "color", "bg-color", "background"],
+        "correctAnswer": "background-color"
+      },
+      {
+        "question": "What is the purpose of the 'alt' attribute in an <img> tag?",
+        "options": [
+          "To provide alternative text if the image cannot be displayed",
+          "To style the image",
+          "To link to another image",
+          "To change the image size"
+        ],
+        "correctAnswer": "To provide alternative text if the image cannot be displayed"
+      },
+      {
+        "question": "What does the DOM stand for?",
+        "options": [
+          "Document Object Model",
+          "Display Object Management",
+          "Digital Object Module",
+          "Document Orientation Model"
+        ],
+        "correctAnswer": "Document Object Model"
+      },
+      {
+        "question": "Which HTML5 element is used to define navigation links?",
+        "options": ["<nav>", "<header>", "<footer>", "<section>"],
+        "correctAnswer": "<nav>"
+      },
+      {
+        "question": "How do you include a comment in JavaScript?",
+        "options": [
+          "// This is a comment",
+          "/* This is a comment */",
+          "<!-- This is a comment -->",
+          "# This is a comment"
+        ],
+        "correctAnswer": "// This is a comment"
+      },
+      {
+        "question": "Which pseudo-class is used to style an element when it is being hovered over?",
+        "options": [":hover", ":active", ":focus", ":visited"],
+        "correctAnswer": ":hover"
+      },
+      {
+        "question": "What is the purpose of the <meta> tag in HTML?",
+        "options": [
+          "To provide metadata about the HTML document",
+          "To create a hyperlink",
+          "To add a new section",
+          "To include JavaScript"
+        ],
+        "correctAnswer": "To provide metadata about the HTML document"
+      },
+      {
+        "question": "Which property in CSS is used to control the space between lines of text?",
+        "options": ["line-height", "letter-spacing", "text-indent", "spacing"],
+        "correctAnswer": "line-height"
+      },
+      {
+        "question": "Which JavaScript method is used to add an event listener to an element?",
+        "options": [
+          "addEventListener()",
+          "attachEvent()",
+          "onClick()",
+          "addListener()"
+        ],
+        "correctAnswer": "addEventListener()"
+      }
+    ]
+  },
+
+  {
+    "topic": "backend-test",
+    "questions": [
+      {
+        "question": "Which language is commonly used for backend development?",
+        "options": ["HTML", "Python", "CSS", "XML"],
+        "correctAnswer": "Python"
+      },
+      {
+        "question": "What does REST stand for in RESTful APIs?",
+        "options": [
+          "Representational State Transfer",
+          "Representation State Transition",
+          "Restoration State Transition",
+          "Representative State Transfer"
+        ],
+        "correctAnswer": "Representational State Transfer"
+      },
+      {
+        "question": "Which database uses SQL as its query language?",
+        "options": ["MongoDB", "Cassandra", "MySQL", "Neo4j"],
+        "correctAnswer": "MySQL"
+      },
+      {
+        "question": "What is the primary function of a backend server?",
+        "options": [
+          "Provide a user interface",
+          "Process client requests",
+          "Design frontend components",
+          "Load images"
+        ],
+        "correctAnswer": "Process client requests"
+      },
+      {
+        "question": "Which framework is associated with Node.js?",
+        "options": ["Flask", "Django", "Express.js", "Laravel"],
+        "correctAnswer": "Express.js"
+      },
+      {
+        "question": "What is a middleware in backend development?",
+        "options": [
+          "A database driver",
+          "A type of server",
+          "A function that handles requests between server and application",
+          "An API endpoint"
+        ],
+        "correctAnswer": "A function that handles requests between server and application"
+      },
+      {
+        "question": "Which HTTP method is used to update an existing resource?",
+        "options": ["GET", "POST", "PUT", "DELETE"],
+        "correctAnswer": "PUT"
+      },
+      {
+        "question": "What is the purpose of caching in backend development?",
+        "options": [
+          "To store backups",
+          "To reduce database load and improve response times",
+          "To secure APIs",
+          "To compress data"
+        ],
+        "correctAnswer": "To reduce database load and improve response times"
+      },
+      {
+        "question": "What is the default port for HTTP?",
+        "options": ["80", "8080", "443", "21"],
+        "correctAnswer": "80"
+      },
+      {
+        "question": "Which of the following is a NoSQL database?",
+        "options": ["PostgreSQL", "MongoDB", "MySQL", "Oracle"],
+        "correctAnswer": "MongoDB"
+      }
+    ]
+  },
+  {
+    "topic": "backend-test",
+    "questions": [
+      {
+        "question": "Which language is commonly used for backend development?",
+        "options": ["HTML", "Python", "CSS", "XML"],
+        "correctAnswer": "Python"
+      },
+      {
+        "question": "What does REST stand for in RESTful APIs?",
+        "options": [
+          "Representational State Transfer",
+          "Representation State Transition",
+          "Restoration State Transition",
+          "Representative State Transfer"
+        ],
+        "correctAnswer": "Representational State Transfer"
+      },
+      {
+        "question": "Which database uses SQL as its query language?",
+        "options": ["MongoDB", "Cassandra", "MySQL", "Neo4j"],
+        "correctAnswer": "MySQL"
+      },
+      {
+        "question": "What is the primary function of a backend server?",
+        "options": [
+          "Provide a user interface",
+          "Process client requests",
+          "Design frontend components",
+          "Load images"
+        ],
+        "correctAnswer": "Process client requests"
+      },
+      {
+        "question": "Which framework is associated with Node.js?",
+        "options": ["Flask", "Django", "Express.js", "Laravel"],
+        "correctAnswer": "Express.js"
+      },
+      {
+        "question": "What is a middleware in backend development?",
+        "options": [
+          "A database driver",
+          "A type of server",
+          "A function that handles requests between server and application",
+          "An API endpoint"
+        ],
+        "correctAnswer": "A function that handles requests between server and application"
+      },
+      {
+        "question": "Which HTTP method is used to update an existing resource?",
+        "options": ["GET", "POST", "PUT", "DELETE"],
+        "correctAnswer": "PUT"
+      },
+      {
+        "question": "What is the purpose of caching in backend development?",
+        "options": [
+          "To store backups",
+          "To reduce database load and improve response times",
+          "To secure APIs",
+          "To compress data"
+        ],
+        "correctAnswer": "To reduce database load and improve response times"
+      },
+      {
+        "question": "What is the default port for HTTP?",
+        "options": ["80", "8080", "443", "21"],
+        "correctAnswer": "80"
+      },
+      {
+        "question": "Which of the following is a NoSQL database?",
+        "options": ["PostgreSQL", "MongoDB", "MySQL", "Oracle"],
+        "correctAnswer": "MongoDB"
+      }
+    ]
+  },
+  {
+    "topic": "ai-engineer-test",
+    "questions": [
+      {
+        "question": "What does AI stand for?",
+        "options": [
+          "Artificial Integration",
+          "Automated Intelligence",
+          "Artificial Intelligence",
+          "Advanced Integration"
+        ],
+        "correctAnswer": "Artificial Intelligence"
+      },
+      {
+        "question": "Which algorithm is used to find patterns in labeled data?",
+        "options": [
+          "Supervised Learning",
+          "Unsupervised Learning",
+          "Reinforcement Learning",
+          "Dimensionality Reduction"
+        ],
+        "correctAnswer": "Supervised Learning"
+      },
+      {
+        "question": "Which library is widely used for deep learning?",
+        "options": ["TensorFlow", "Pandas", "NumPy", "Matplotlib"],
+        "correctAnswer": "TensorFlow"
+      },
+      {
+        "question": "What is the primary purpose of a neural network?",
+        "options": [
+          "Data visualization",
+          "Feature engineering",
+          "Pattern recognition",
+          "Database management"
+        ],
+        "correctAnswer": "Pattern recognition"
+      },
+      {
+        "question": "What is the term for training a model using data?",
+        "options": [
+          "Validation",
+          "Prediction",
+          "Optimization",
+          "Model Training"
+        ],
+        "correctAnswer": "Model Training"
+      },
+      {
+        "question": "Which technique prevents overfitting in deep learning?",
+        "options": [
+          "Dropout",
+          "Pooling",
+          "Batch Normalization",
+          "Gradient Descent"
+        ],
+        "correctAnswer": "Dropout"
+      },
+      {
+        "question": "What does NLP stand for?",
+        "options": [
+          "Natural Language Processing",
+          "Neural Learning Process",
+          "Nonlinear Processing",
+          "Natural Learning Path"
+        ],
+        "correctAnswer": "Natural Language Processing"
+      },
+      {
+        "question": "Which type of AI focuses on task-specific capabilities?",
+        "options": ["General AI", "Narrow AI", "Strong AI", "Cognitive AI"],
+        "correctAnswer": "Narrow AI"
+      },
+      {
+        "question": "What is reinforcement learning primarily used for?",
+        "options": [
+          "Pattern recognition",
+          "Decision-making in uncertain environments",
+          "Feature selection",
+          "Data visualization"
+        ],
+        "correctAnswer": "Decision-making in uncertain environments"
+      },
+      {
+        "question": "Which evaluation metric is commonly used for classification problems?",
+        "options": ["Mean Squared Error", "Accuracy", "Precision", "Recall"],
+        "correctAnswer": "Accuracy"
+      }
+    ]
+  },
+  {
+    "topic": "data-scientist-test",
+    "questions": [
+      {
+        "question": "What does EDA stand for in data science?",
+        "options": [
+          "Extensive Data Analysis",
+          "Exploratory Data Analysis",
+          "Enhanced Data Architecture",
+          "Extended Data Analytics"
+        ],
+        "correctAnswer": "Exploratory Data Analysis"
+      },
+      {
+        "question": "Which library is used for data manipulation in Python?",
+        "options": ["Pandas", "TensorFlow", "Scikit-learn", "Keras"],
+        "correctAnswer": "Pandas"
+      },
+      {
+        "question": "What does the term 'overfitting' mean in machine learning?",
+        "options": [
+          "Model performs poorly on training data",
+          "Model fits noise in the training data too closely",
+          "Model is too simple",
+          "Model generalizes well"
+        ],
+        "correctAnswer": "Model fits noise in the training data too closely"
+      },
+      {
+        "question": "Which plot is best suited for visualizing the distribution of a single variable?",
+        "options": ["Scatter plot", "Bar chart", "Histogram", "Line chart"],
+        "correctAnswer": "Histogram"
+      },
+      {
+        "question": "What is a common technique to handle missing data?",
+        "options": [
+          "Drop rows with missing values",
+          "Fill with the mean/median",
+          "Predict missing values",
+          "All of the above"
+        ],
+        "correctAnswer": "All of the above"
+      },
+      {
+        "question": "Which algorithm is best suited for a regression problem?",
+        "options": [
+          "Logistic Regression",
+          "Linear Regression",
+          "Decision Tree Classifier",
+          "K-Means Clustering"
+        ],
+        "correctAnswer": "Linear Regression"
+      },
+      {
+        "question": "What does a confusion matrix measure?",
+        "options": [
+          "Errors in predictions",
+          "Distribution of data",
+          "Classification accuracy",
+          "Feature importance"
+        ],
+        "correctAnswer": "Errors in predictions"
+      },
+      {
+        "question": "Which programming language is most commonly used in data science?",
+        "options": ["Java", "Python", "C++", "JavaScript"],
+        "correctAnswer": "Python"
+      },
+      {
+        "question": "What is feature engineering?",
+        "options": [
+          "Adding noise to data",
+          "Transforming raw data into useful inputs for modeling",
+          "Building machine learning models",
+          "Analyzing the dataset"
+        ],
+        "correctAnswer": "Transforming raw data into useful inputs for modeling"
+      },
+      {
+        "question": "Which metric is commonly used for evaluating regression models?",
+        "options": [
+          "Mean Squared Error",
+          "Precision",
+          "Accuracy",
+          "Confusion Matrix"
+        ],
+        "correctAnswer": "Mean Squared Error"
+      }
+    ]
+  },
+  {
+    "topic": "devops-test",
+    "questions": [
+      {
+        "question": "What does CI/CD stand for?",
+        "options": [
+          "Continuous Integration and Continuous Deployment",
+          "Code Integration and Code Development",
+          "Continuous Improvement and Continuous Delivery",
+          "Code Initialization and Continuous Deployment"
+        ],
+        "correctAnswer": "Continuous Integration and Continuous Deployment"
+      },
+      {
+        "question": "Which tool is commonly used for containerization?",
+        "options": ["Docker", "Ansible", "Jenkins", "Terraform"],
+        "correctAnswer": "Docker"
+      },
+      {
+        "question": "What is Infrastructure as Code (IaC)?",
+        "options": [
+          "Managing infrastructure through code",
+          "Coding for software",
+          "Containerizing applications",
+          "Monitoring tools"
+        ],
+        "correctAnswer": "Managing infrastructure through code"
+      },
+      {
+        "question": "Which tool is used for automating deployments?",
+        "options": ["Jenkins", "Git", "Docker", "Prometheus"],
+        "correctAnswer": "Jenkins"
+      },
+      {
+        "question": "What is the main purpose of Kubernetes?",
+        "options": [
+          "Monitoring infrastructure",
+          "Orchestrating containerized applications",
+          "Version control",
+          "Building CI/CD pipelines"
+        ],
+        "correctAnswer": "Orchestrating containerized applications"
+      },
+      {
+        "question": "Which DevOps practice helps identify and resolve production issues faster?",
+        "options": [
+          "Continuous Integration",
+          "Continuous Monitoring",
+          "Continuous Deployment",
+          "Continuous Delivery"
+        ],
+        "correctAnswer": "Continuous Monitoring"
+      },
+      {
+        "question": "What is the primary purpose of Ansible?",
+        "options": [
+          "Configuration management and automation",
+          "Monitoring systems",
+          "Container orchestration",
+          "Building applications"
+        ],
+        "correctAnswer": "Configuration management and automation"
+      },
+      {
+        "question": "What is the default orchestration tool for Docker?",
+        "options": ["Docker Swarm", "Kubernetes", "Prometheus", "Ansible"],
+        "correctAnswer": "Docker Swarm"
+      },
+      {
+        "question": "Which of the following is a version control tool?",
+        "options": ["Git", "Terraform", "Jenkins", "Grafana"],
+        "correctAnswer": "Git"
+      },
+      {
+        "question": "What is a key benefit of DevOps?",
+        "options": [
+          "Faster delivery of software",
+          "Reduced costs",
+          "Improved collaboration",
+          "All of the above"
+        ],
+        "correctAnswer": "All of the above"
+      }
+    ]
+  }
+]

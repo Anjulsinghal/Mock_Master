@@ -1,0 +1,154 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: whitesmoke;
+    color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #444;
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo img {
+    /* height: 40px;
+    border-radius: 5px; */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.8em;
+    text-align: center;
+    flex: 1;
+}
+
+/* Main Section */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Map Section */
+.map {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.map h2 {
+    font-size: 1.5em;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+/* Contact Info Section */
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background-color: #e6f7ff;
+    border: 2px solid #0073e6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInLeft 1.2s ease-in-out;
+}
+
+.contact-info h2 {
+    font-size: 1.5em;
+    color: #0073e6;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1em;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p i {
+    color: #0073e6;
+    margin-right: 10px;
+}
+
+.availability {
+    background-color: #ccffcc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.availability strong {
+    font-size: 1.2em;
+    color: #006600;
+}
+
+.availability p {
+    font-size: 0.9em;
+    margin: 5px 0 0;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background-color: #444;
+    padding: 15px 0;
+    margin-top: 20px;
+    color: #fff;
+}
+
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map, .contact-info {
+        max-width: 100%;
+    }
+}

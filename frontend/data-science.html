@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Scientist - MockMaster</title>
+    <link rel="stylesheet" href="frontend.css">
+    <script src="authentication.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style src="test.css"></style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/image.jpg" alt="MockMaster Logo">
+            <h1>MockMaster</h1>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="mocktest.html"><i class="fas fa-edit"></i> Mock Test</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-user"></i> User Profile</a></li>
+            <li><a href="videoconferencing.html"><i class="fas fa-video"></i> Video Conferencing</a></li>
+            <li><a href="aboutus.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="contactus.html"><i class="fas fa-info-circle"></i> Contact Us</a></li>
+            <li><button id="logout-btn" onclick="logout()">Logout</button></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Detailed Description -->
+        <section class="description">
+            <h2>Data Science Overview</h2>
+            <p>Data science combines statistics, programming, and domain expertise to extract meaningful insights from data. Core aspects include:</p>
+
+            <h3>1. Data Analysis</h3>
+            <p>Data analysis involves exploring, visualizing, and summarizing data to uncover trends and patterns.</p>
+            <ul>
+                <li>Techniques include exploratory data analysis (EDA) and statistical modeling.</li>
+                <li>Tools like Pandas, Matplotlib, and Seaborn are widely used.</li>
+            </ul>
+
+            <h3>2. Machine Learning</h3>
+            <p>Machine learning enables predictive modeling by training algorithms on historical data.</p>
+            <ul>
+                <li>Key algorithms include regression, classification, and clustering methods.</li>
+                <li>Frameworks like Scikit-learn, TensorFlow, and PyTorch facilitate ML development.</li>
+            </ul>
+
+            <h3>3. Data Engineering</h3>
+            <p>Data engineering focuses on building robust pipelines to process and store data efficiently.</p>
+            <ul>
+                <li>Technologies like Apache Spark, Hadoop, and SQL support data engineering tasks.</li>
+                <li>Ensures data integrity and scalability.</li>
+            </ul>
+
+            <h3>4. Data Visualization</h3>
+            <p>Data visualization helps communicate findings through graphical representations.</p>
+            <ul>
+                <li>Libraries like Tableau, Power BI, and Plotly create interactive visuals.</li>
+                <li>Improves decision-making by presenting data clearly.</li>
+            </ul>
+
+            <p>Data scientists use these skills to solve complex problems, drive innovation, and support data-driven decision-making.</p>
+        </section>
+
+        <!-- Start Test Section -->
+        <div class="center-content">
+            <h2>Ready to Begin Your Test?</h2>
+            <p>Click the button below to start the mock test and refine your data science expertise!</p>
+            <button class="start-test-btn" id="startTestBtn">Start Test</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MockMaster. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal Popup -->
+    <div class="modal" id="testRulesModal">
+        <div class="modal-content">
+            <h2>Test Rules</h2>
+            <ol>
+                <li>Ensure a stable internet connection throughout the test.</li>
+                <li>Do not navigate away from the test page during the exam.</li>
+                <li>Each question has a time limit. Submit within the given time.</li>
+                <li>Do not close the browser or refresh the page during the test.</li>
+                <li>Read all instructions carefully before starting the test.</li>
+            </ol>
+            <button id="proceedBtn">Proceed</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Get references to elements
+        const startTestBtn = document.getElementById('startTestBtn');
+        const testRulesModal = document.getElementById('testRulesModal');
+        const proceedBtn = document.getElementById('proceedBtn');
+
+        // Open modal when Start Test button is clicked
+        startTestBtn.addEventListener('click', () => {
+            testRulesModal.style.display = 'flex';
+        });
+
+        // Redirect to test page when Proceed button is clicked
+        proceedBtn.addEventListener('click', () => {
+            localStorage.setItem("test-name", "data-scientist-test");
+            window.location.href = 'frontend-testpage.html'; // Replace with actual test page URL
+        });
+
+        // Close modal if user clicks outside of it
+        window.addEventListener('click', (e) => {
+            if (e.target === testRulesModal) {
+                testRulesModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

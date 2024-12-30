@@ -1,0 +1,176 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+#logout-btn {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #0073e6;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #444;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.sidebar .logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar .logo h2 {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.sidebar ul li {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 0;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Navbar */
+.navbar {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #444;
+    margin-left: 250px;
+}
+
+.navbar h1 {
+    font-size: 28px;
+    color: #fff;
+}
+
+/* Cards Section */
+.skills-section {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #555;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    font-size: 20px;
+}
+
+.schedule-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #0073e6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.schedule-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    z-index: 1000;
+}
+
+.modal-content input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.modal-content button {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #444;
+    padding: 15px 0;
+    margin-top: 20px;
+    color: #fff;
+}
+/* Mentor Card Images */
+/* Mentor Card Images */
+.card img {
+    width: 100px; /* Fixed size for a consistent circular shape */
+    height: 100px; /* Ensure the height matches the width */
+    border-radius: 50%; /* Makes the image round */
+    cursor: pointer;
+    margin-bottom: 10px;
+    object-fit: cover; /* Ensures the image fits well within the circular frame */
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}

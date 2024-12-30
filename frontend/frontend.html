@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend - MockMaster</title>
+    <link rel="stylesheet" href="frontend.css">
+    <script src="authentication.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style src="test.css"></style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/image.jpg" alt="MockMaster Logo">
+            <h1>MockMaster</h1>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="mocktest.html"><i class="fas fa-edit"></i> Mock Test</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-user"></i> User Profile</a></li>
+            <li><a href="videoconferencing.html"><i class="fas fa-video"></i> Video Conferencing</a></li>
+            <li><a href="aboutus.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="contactus.html"><i class="fas fa-info-circle"></i> Contact Us</a></li>
+            <li><button id="logout-btn" onclick="logout()">Logout</button></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Detailed Description -->
+        <section class="description">
+            <h2>Frontend Development Overview</h2>
+            <p>Frontend development focuses on the user interface (UI) and user experience (UX) of a website or web application. It involves using three core technologies:</p>
+
+            <h3>1. HTML (HyperText Markup Language)</h3>
+            <p>HTML is the backbone of any web page. It provides the structure of the page, allowing developers to define headings, paragraphs, links, images, and other content.</p>
+            <ul>
+                <li>HTML5 introduces semantic tags like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;footer&gt;</code> for better organization.</li>
+                <li>It supports multimedia like video and audio elements.</li>
+            </ul>
+
+            <h3>2. CSS (Cascading Style Sheets)</h3>
+            <p>CSS is used to style the HTML content. It controls the layout, colors, fonts, and animations on a web page.</p>
+            <ul>
+                <li>Modern CSS includes Flexbox and Grid for responsive layouts.</li>
+                <li>CSS3 enables transitions, animations, and advanced visual effects.</li>
+            </ul>
+
+            <h3>3. JavaScript</h3>
+            <p>JavaScript makes a webpage interactive. It allows dynamic content updates, event handling, and client-side logic.</p>
+            <ul>
+                <li>ES6 (ECMAScript 2015+) introduces modern features like classes, modules, and arrow functions.</li>
+                <li>Frameworks like React, Angular, and Vue simplify frontend development.</li>
+            </ul>
+
+            <p>By combining HTML, CSS, and JavaScript, developers create visually appealing, responsive, and interactive websites that provide a seamless user experience.</p>
+        </section>
+
+        <!-- Start Test Section -->
+        <div class="center-content">
+            <h2>Ready to Begin Your Test?</h2>
+            <p>Click the button below to start the mock test and improve your skills!</p>
+            <button class="start-test-btn" id="startTestBtn">Start Test</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MockMaster. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal Popup -->
+    <div class="modal" id="testRulesModal">
+        <div class="modal-content">
+            <h2>Test Rules</h2>
+            <ol>
+                <li>Ensure a stable internet connection throughout the test.</li>
+                <li>Do not navigate away from the test page during the exam.</li>
+                <li>Each question has a time limit. Submit within the given time.</li>
+                <li>Do not close the browser or refresh the page during the test.</li>
+                <li>Read all instructions carefully before starting the test.</li>
+            </ol>
+            <button id="proceedBtn">Proceed</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Get references to elements
+        const startTestBtn = document.getElementById('startTestBtn');
+        const testRulesModal = document.getElementById('testRulesModal');
+        const proceedBtn = document.getElementById('proceedBtn');
+
+        // Open modal when Start Test button is clicked
+        startTestBtn.addEventListener('click', () => {
+            testRulesModal.style.display = 'flex';
+        });
+
+        // Redirect to test page when Proceed button is clicked
+        proceedBtn.addEventListener('click', () => {
+            localStorage.setItem("test-name", "frontend-test");
+            window.location.href = 'frontend-testpage.html'; // Replace with actual test page URL
+        });
+
+        // Close modal if user clicks outside of it
+        window.addEventListener('click', (e) => {
+            if (e.target === testRulesModal) {
+                testRulesModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

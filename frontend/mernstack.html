@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERN Stack - MockMaster</title>
+    <link rel="stylesheet" href="frontend.css">
+    <script src="authentication.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style src="test.css"></style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/image.jpg" alt="MockMaster Logo">
+            <h1>MockMaster</h1>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="mocktest.html"><i class="fas fa-edit"></i> Mock Test</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-user"></i> User Profile</a></li>
+            <li><a href="videoconferencing.html"><i class="fas fa-video"></i> Video Conferencing</a></li>
+            <li><a href="aboutus.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="contactus.html"><i class="fas fa-info-circle"></i> Contact Us</a></li>
+            <li><button id="logout-btn" onclick="logout()">Logout</button></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Detailed Description -->
+        <section class="description">
+            <h2>MERN Stack Development Overview</h2>
+            <p>The MERN stack is a popular JavaScript-based technology stack used for building full-stack web applications. It comprises:</p>
+
+            <h3>1. MongoDB</h3>
+            <p>MongoDB is a NoSQL database that stores data in flexible, JSON-like documents, allowing developers to manage unstructured data efficiently.</p>
+            <ul>
+                <li>Supports scalability and high performance for modern applications.</li>
+                <li>Integrates seamlessly with JavaScript for easy data manipulation.</li>
+            </ul>
+
+            <h3>2. Express.js</h3>
+            <p>Express.js is a lightweight web application framework for Node.js. It simplifies server-side development and handles HTTP requests efficiently.</p>
+            <ul>
+                <li>Provides robust routing and middleware capabilities.</li>
+                <li>Enables rapid API development and integration.</li>
+            </ul>
+
+            <h3>3. React</h3>
+            <p>React is a frontend library for building user interfaces. It enables the creation of reusable UI components and ensures a dynamic user experience.</p>
+            <ul>
+                <li>Uses a virtual DOM for optimal rendering performance.</li>
+                <li>Supports modern development paradigms with hooks and state management.</li>
+            </ul>
+
+            <h3>4. Node.js</h3>
+            <p>Node.js is a runtime environment for executing JavaScript on the server. It provides the backbone for the MERN stack, enabling scalable backend solutions.</p>
+            <ul>
+                <li>Handles asynchronous operations efficiently with event-driven architecture.</li>
+                <li>Powers RESTful APIs and real-time applications.</li>
+            </ul>
+
+            <p>By combining these technologies, developers can build robust, scalable, and maintainable full-stack applications using a single programming language: JavaScript.</p>
+        </section>
+
+        <!-- Start Test Section -->
+        <div class="center-content">
+            <h2>Ready to Begin Your Test?</h2>
+            <p>Click the button below to start the mock test and improve your MERN stack skills!</p>
+            <button class="start-test-btn" id="startTestBtn">Start Test</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MockMaster. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal Popup -->
+    <div class="modal" id="testRulesModal">
+        <div class="modal-content">
+            <h2>Test Rules</h2>
+            <ol>
+                <li>Ensure a stable internet connection throughout the test.</li>
+                <li>Do not navigate away from the test page during the exam.</li>
+                <li>Each question has a time limit. Submit within the given time.</li>
+                <li>Do not close the browser or refresh the page during the test.</li>
+                <li>Read all instructions carefully before starting the test.</li>
+            </ol>
+            <button id="proceedBtn">Proceed</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Get references to elements
+        const startTestBtn = document.getElementById('startTestBtn');
+        const testRulesModal = document.getElementById('testRulesModal');
+        const proceedBtn = document.getElementById('proceedBtn');
+
+        // Open modal when Start Test button is clicked
+        startTestBtn.addEventListener('click', () => {
+            testRulesModal.style.display = 'flex';
+        });
+
+        // Redirect to test page when Proceed button is clicked
+        proceedBtn.addEventListener('click', () => {
+            localStorage.setItem("test-name", "mern-stack-test");
+            window.location.href = 'frontend-testpage.html'; // Replace with actual test page URL
+        });
+
+        // Close modal if user clicks outside of it
+        window.addEventListener('click', (e) => {
+            if (e.target === testRulesModal) {
+                testRulesModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

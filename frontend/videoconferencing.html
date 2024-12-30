@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Conferencing</title>
+    <link rel="stylesheet" href="videoconferencing.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
+    <script src="authentication.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/image.jpg" alt="Logo">
+            <h2>MockMaster</h2>
+        </div>
+        <ul>
+            <li><a href="mocktest.html">Mock Test</a></li>
+            <li><a href="dashboard.html">User Profile</a></li>
+            <li><a href="videoconferencing.html">Video Conferencing</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><button id="logout-btn" onclick="logout()">Logout</button></li>
+        </ul>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Video Conferencing- Enhance Skills with our Expert!</h1>
+    </div>
+
+    <!-- Mentor Cards Section -->
+    <section class="skills-section">
+        <div class="cards-container">
+            <!-- Mentor Card 1 -->
+            <div class="card">
+                <img src="images/pssharma.jpg" alt="Dr. Sarah Johnson" onclick="redirectToDetails('prashantsir.html')">
+                <h3>Prashant Sharma</h3>
+                <p>Expert in Data Science with 10+ years of experience.</p>
+                <button class="schedule-btn" onclick="openCalendar('Dr. Sarah Johnson')">Schedule Meeting</button>
+                <button class="schedule-btn" onclick="openMeetLink('https://meet.google.com/example-link-1')">Join Google Meet</button>
+            </div>
+            <!-- Mentor Card 2 -->
+            <div class="card">
+                <img src="images/amitsir.jpg" alt="Prof. Alan Smith" onclick="redirectToDetails('amitsir.html')">
+                <h3>Amit Sharma</h3>
+                <p>Software Engineer with expertise in AI and ML.</p>
+                <button class="schedule-btn" onclick="openCalendar('Prof. Alan Smith')">Schedule Meeting</button>
+                <button class="schedule-btn" onclick="openMeetLink('https://meet.google.com/example-link-1')">Join Google Meet</button>
+            </div>
+            <!-- Mentor Card 3 -->
+            <div class="card">
+                <img src="images/sachinsir.jpg" alt="Dr. Emily Davis" onclick="redirectToDetails('mentor3.html')">
+                <h3>Sachin Kumar Jindal</h3>
+                <p>Specialist in Cybersecurity and Ethical Hacking.</p>
+                <button class="schedule-btn" onclick="openCalendar('Dr. Emily Davis')">Schedule Meeting</button>
+                <button class="schedule-btn" onclick="openMeetLink('https://meet.google.com/example-link-1')">Join Google Meet</button>
+            </div>
+            <!-- Mentor Card 4 -->
+            <div class="card">
+                <img src="images/nehamam.jpg" alt="Mr. John Doe" onclick="redirectToDetails('mentor4.html')">
+                <h3>Neha Singh</h3>
+                <p>Cloud Architect with expertise in AWS and Azure.</p>
+                <button class="schedule-btn" onclick="openCalendar('Mr. John Doe')">Schedule Meeting</button>
+                <button class="schedule-btn" onclick="openMeetLink('https://meet.google.com/example-link-1')">Join Google Meet</button>
+            </div>
+            <!-- Mentor Card 5 -->
+            <div class="card">
+                <img src="images/sahoosir.jpg" alt="Ms. Olivia Brown" onclick="redirectToDetails('mentor5.html')">
+                <h3>Dr. Shantanu Kumar Sahoo</h3>
+                <p>Expert in Business Analytics and Strategic Planning.</p>
+                <button class="schedule-btn" onclick="openCalendar('Ms. Olivia Brown')">Schedule Meeting</button>
+                <button class="schedule-btn" onclick="openMeetLink('https://meet.google.com/example-link-1')">Join Google Meet</button>
+            </div>
+            <!-- Mentor Card 6 -->
+            <div class="card">
+                <img src="images/ankitsingh.jpg" alt="Dr. Michael Green" onclick="redirectToDetails('mentor6.html')">
+                <h3>Ankit Singh</h3>
+                <p>Machine Learning Engineer with a passion for AI innovation.</p>
+                <button class="schedule-btn" onclick="openCalendar('Dr. Michael Green')">Schedule Meeting</button>
+                <button class="schedule-btn" onclick="openMeetLink('https://meet.google.com/example-link-1')">Join Google Meet</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 MockMaster. All rights reserved.</p>
+    </footer>
+
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="mentor-name"></h2>
+            <input id="calendar" type="text" placeholder="Pick a date and time">
+            <button onclick="scheduleMeeting()">Confirm</button>
+            <button onclick="closeCalendar()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

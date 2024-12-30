@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Questions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"], textarea, select {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .option-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .option-container input {
+      margin-right: 10px;
+    }
+
+    .add-option-btn {
+      background-color: #007bff;
+      color: white;
+      margin-top: 10px;
+    }
+
+    .add-option-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add Questions</h1>
+    <form id="add-question-form">
+      <label for="topic">Topic:</label>
+      <input type="text" id="topic" name="topic" placeholder="Enter topic name" required>
+
+      <label for="question">Question:</label>
+      <textarea id="question" name="question" rows="3" placeholder="Enter question" required></textarea>
+
+      <label>Options:</label>
+      <div id="options-container">
+        <div class="option-container">
+          <input type="text" name="option" placeholder="Option 1" required>
+        </div>
+        <div class="option-container">
+          <input type="text" name="option" placeholder="Option 2" required>
+        </div>
+      </div>
+      <button type="button" class="add-option-btn" onclick="addOption()">Add Option</button>
+
+      <label for="correctAnswer">Correct Answer:</label>
+      <input type="text" id="correctAnswer" name="correctAnswer" placeholder="Enter correct answer" required>
+
+      <button type="submit">Add Question</button>
+    </form>
+  </div>
+
+  <script>
+    // Function to add a new option input
+    function addOption() {
+      const optionsContainer = document.getElementById('options-container');
+      const optionCount = optionsContainer.children.length + 1;
+      const newOption = document.createElement('div');
+      newOption.className = 'option-container';
+      newOption.innerHTML = `
+        <input type="text" name="option" placeholder="Option ${optionCount}" required>
+      `;
+      optionsContainer.appendChild(newOption);
+    }
+
+    // Form submission handler
+    document.getElementById('add-question-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Collect form data
+      const topic = document.getElementById('topic').value;
+      const question = document.getElementById('question').value;
+      const options = Array.from(document.querySelectorAll('#options-container input[name="option"]')).map(input => input.value);
+      const correctAnswer = document.getElementById('correctAnswer').value;
+
+      // Validate options
+      if (!options.includes(correctAnswer)) {
+        alert('The correct answer must be one of the provided options.');
+        return;
+      }
+
+      // Create the payload
+      const payload = {
+        topic,
+        questions: [
+          {
+            question,
+            options,
+            correctAnswer,
+          },
+        ],
+      };
+
+      try {
+        // Send data to the backend
+        const response = await fetch('http://localhost:5000/api/questions/add', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          alert('Question added successfully!');
+          document.getElementById('add-question-form').reset();
+        } else {
+          alert(`Error: ${data.error}`);
+        }
+      } catch (err) {
+        console.error('Error:', err);
+        alert('Failed to add question. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>

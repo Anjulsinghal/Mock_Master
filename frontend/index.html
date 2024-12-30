@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - MockMaster</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Icons and Clean Text -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="images/image.jpg" alt="MockMaster Logo">
+            <h1>MockMaster</h1>
+        </div>
+        <!-- Login Button (added) -->
+        <a href="login.html" class="login-btn">Login</a>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#mocktest"><i class="fas fa-edit"></i> Mock Test</a></li>
+            <li><a href="#userprofile"><i class="fas fa-user"></i> User Profile</a></li>
+            <li><a href="#videoconferencing"><i class="fas fa-video"></i> Video Conferencing</a></li>
+            <li><a href="#aboutus"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="#contactus"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <section id="mocktest" class="feature-section">
+            <h2>Mock Test</h2>
+            <p>Our platform offers a robust mock test feature that allows users to take time-bound tests on various subjects like Python, Java, and MERN Stack. Each test provides instant results, detailed explanations, and performance analytics to help you identify strengths and areas for improvement.</p>
+            <a href="mocktest.html" class="learn-more">Learn More</a>
+        </section>
+        <section id="userprofile" class="feature-section">
+            <h2>User Profile</h2>
+            <p>The user profile section helps you manage personal data, track your progress, view test history, and customize settings. Securely stored and accessible anytime, your profile helps you monitor your learning journey effectively.</p>
+            <a href="userprofile.html" class="learn-more">Learn More</a>
+        </section>
+        <section id="videoconferencing" class="feature-section">
+            <h2>Video Conferencing</h2>
+            <p>Our video conferencing feature enables seamless collaboration and learning. Conduct live mentorship sessions, group discussions, and one-on-one meetings with peers and educators for enhanced learning experiences.</p>
+            <a href="videoconferencing.html" class="learn-more">Learn More</a>
+        </section>
+        <section id="aboutus" class="feature-section">
+            <h2>About Us</h2>
+            <p>At MockMaster, we are committed to providing cutting-edge tools and resources to help learners achieve excellence. Our goal is to enhance learning outcomes through innovative features like mock tests, video conferencing, and personalized dashboards.</p>
+            <a href="aboutus.html" class="learn-more">Learn More</a>
+        </section>
+        <section id="contactus" class="feature-section">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us via email at <strong>support@mockmaster.com</strong>, or call us at <strong>+91 7505998838</strong>. You can also visit our office at 123 MockMaster Lane, EdTech City, Learning World.</p>
+            <a href="contactus.html" class="learn-more">Learn More</a>
+        </section>
+        <section id="logout" class="feature-section">
+            <h2>Logout</h2>
+            <p>Ensure the safety of your account by securely logging out after each session. This keeps your data protected and maintains privacy on shared devices.</p>
+            <a href="logout.html" class="learn-more">Learn More</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MockMaster. All rights reserved.</p>
+    </footer>
+
+
+
+
+
+    <script>
+        const checkAuth = localStorage.getItem('token') ? true : false;
+        if(checkAuth) {
+            window.Location.href = "mocktest.html";
+        }
+    </script>
+</body>
+</html>
